@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Rapport</title>
+</head>
+
+
+<body>
+
+<div class="container m-4">
+
+    <h1>Rapport - IFT 3911 : TP3</h1><br>
+
+    <h2>Membres de l'équipe :</h2>
+    <ul>
+        <li>Nicolas Alvarado; 3382; nicolas.alvarado@umontreal.ca; temps mis : 9h </li>
+        <li>Nathan Grondin; 7500; nathan-ivanhoe.grondin-richard@umontreal.ca; temps mis : ?</li>
+        <li>Nadia Charonov; 1063; charonovnadia@gmail.com; temps mis : >25h</li>
+    </ul><br>
+
+    <h4>Devoir complet soumis par :</h4>
+    <p>Nadia Charonov</p><br>
+
+    <h4>Distribution des tâches :</h4><br>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Tâche</th>
+            <th>Nicolas</th>
+            <th>Nathan</th>
+            <th>Nadia</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>
+                Design Logiciel
+            </th>
+            <td>
+                Visiteur (classe + séquence), Observateur (classe + séquence), Commande (classe + séquence), Stratégie (classe)
+            </td>
+            <td>
+                ?
+            </td>
+            <td>
+                Fabriques (classe + séquence), état (classe + séquence), singleton
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Discussion et justification de la qualité du design
+            </th>
+            <td>
+                Discussion du patron de l'observateur, visiteur, commande et stratégie
+            </td>
+            <td>
+                ?
+            </td>
+            <td>
+                -
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Implémentation
+            </th>
+            <td>
+                -
+            </td>
+            <td>
+                ?
+            </td>
+            <td>
+                Implémentation des fabriques, état, singleton, package utilisateurs, package reservation_paiement
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Interface graphique
+            </th>
+            <td>
+                -
+            </td>
+            <td>
+                ?
+            </td>
+            <td>
+                Implémentation du gui
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    Voir remise de Nathan pour sa repartition des tâches<br><br>
+
+    <h2>Design Logiciel</h2><br>
+    <div>
+        <li>Diagramme de classe pour le patron de fabriques</li>
+        <img src="Design/diagramme_classe/classe_fabrique.jpg" class="m-5"><br>
+
+        <li>Diagramme de classe pour le patron du singleton</li>
+        <img src="Design/diagramme_classe/classe_singleton.jpg" class="m-5" ><br>
+
+        <li>Diagramme de classe pour le patron d'état</li>
+        <img src="Design/diagramme_classe/classe_etat.jpg" class="m-5" ><br>
+
+        <li>Diagramme de classe pour le patron de l'observateur</li>
+        <img src="Design/diagramme_classe/classe_observateur.PNG" class="m-5"><br>
+
+        <li>Diagramme de classe pour le patron de commande</li>
+        <img src="Design/diagramme_classe/classse_commande.PNG" class="m-5"><br>
+
+        <li>Diagramme de classe pour le patron du visiteur</li>
+        <img src="Design/diagramme_classe/classe_visiteur.PNG" class="m-5"><br>
+
+        <li>Diagramme de classe pour le patron de stratégie</li>
+        <img src="Design/diagramme_classe/classe_stratégie.PNG" class="m-5"><br>
+
+        <li>Diagrammes de séquences pour le patron de fabrique</li>
+        <img src="Design/diagramme_sequence/fabrique_1.jpg" class="m-5"><br>
+        <img src="Design/diagramme_sequence/fabrique_2.jpg" class="m-5"><br>
+        <img src="Design/diagramme_sequence/fabrique_3.jpg" class="m-5"><br>
+        <img src="Design/diagramme_sequence/fabrique_4.jpg" class="m-5"><br>
+        <img src="Design/diagramme_sequence/fabrique_5.jpg" class="m-5"><br>
+        <img src="Design/diagramme_sequence/fabrique_6.jpg" class="m-5"><br>
+        <img src="Design/diagramme_sequence/fabrique_7.jpg" class="m-5"><br>
+        <img src="Design/diagramme_sequence/fabrique_8.jpg" class="m-5"><br>
+        <img src="Design/diagramme_sequence/fabrique_9.jpg" class="m-5"><br>
+
+        <li>Diagrammes de séquences pour le patron d'état</li>
+        <img src="Design/diagramme_sequence/etat_1.jpg" class="m-5"><br>
+        <img src="Design/diagramme_sequence/etat_2.jpg" class="m-5"><br>
+        <img src="Design/diagramme_sequence/etat_3.jpg" class="m-5"><br>
+
+        <li>Diagrammes de collaboration pour le patron de commande</li>
+        <img src="Design/diagramme_sequence/commande_1.JPG" class="m-5"><br>
+        <img src="Design/diagramme_sequence/commande_2.JPG" class="m-5"><br>
+        <img src="Design/diagramme_sequence/commande_3.JPG" class="m-5"><br>
+        <img src="Design/diagramme_sequence/commande_4.JPG" class="m-5"><br>
+        <img src="Design/diagramme_sequence/commande_5.JPG" class="m-5"><br>
+        <img src="Design/diagramme_sequence/commande_6.JPG" class="m-5"><br>
+
+        <li>Diagrammes de sequence pour le patron de l'observateur</li>
+        <img src="Design/diagramme_sequence/observateur_1.PNG" class="m-5"><br>
+        <img src="Design/diagramme_sequence/observateur_2.PNG" class="m-5"><br>
+        <img src="Design/diagramme_sequence/observateur_3.PNG" class="m-5"><br>
+
+        <li>Diagrammes de collaboration pour le patron du visiteur</li>
+        <img src="Design/diagramme_sequence/visiteur_1.PNG" class="m-5"><br>
+        <img src="Design/diagramme_sequence/visiteur_2.PNG" class="m-5"><br>
+
+        <li>Diagramme de classe pour le patron de fabriques (additionel)</li>
+        <img src="Design/diagramme_classe/fabrique_2_1.PNG" class="m-5"><br>
+
+        <li>Diagramme de paquet</li>
+        <img src="Design/diagramme_paquet/diagramme_paquet.jpg" class="m-5"><br>
+
+    </div>
+
+    <hr>
+
+    <h2>Discussion et justification de la qualité du design</h2><br>
+
+    <p>L'implémentation de multiples patrons de conceptions apportent avec eux plusieurs conséquences (positives et négatives) vis-à-vis
+    la qualité du design et la conception du projet final. </p><br>
+
+    <p> Le patron du visiteur effectue une opération sur les éléments d'une structure de données, sans changer les classes des éléments
+    sur lesquels l'opération agit. Suivant notre design, il est possible de voir comment ce patron intéragit avec nos classes de
+    voyages. Nous priorisons l'utilisation d'un tel patron pour augmenter la cohésion de notre logiciel, puisque nous rassemblons
+    les opérations de parcours de notre modèle interne avec ce dernier. De plus, le patron facilite l'ajout de nouvelles opérations
+    a effectué sur les éléments de notre structure. Il est cependant difficile d'ajouter de nouveaux éléments concrets à notre design,
+        car nous serions forcé à modifier tous les visiteurs.
+   </p><br>
+
+    <p> Ici, le patron de l'observateur est un moyen efficace d'assurer la cohérence entre les différentes vues du
+        logiciel. Les notions d'observateur (Client ou Admin) et d'observable (classe de voyage) permettent de limiter
+        le couplage entre les modules. Le patron permet aussi une gestion simplifiée d'observateurs multiples sur un même
+        objet observable. Dans le cas de notre design logiciel, nous voyons l'avantage du patron de l'observateur lorsque
+        nous voulons maintenir une cohérence entre la vue Client et la vue Admin. (ex: ajout de voyages par admin et immédiatement
+        reflété dans la vue Client)
+
+    </p><br>
+
+    <p> Afin que la maintenance des actions effectué par l'administrateur ne deviennent pas trop difficile à maintenir, nous avons
+        implémenté le patron de commande. Ce dernier permet de séparer complètement le code initiateur de l'action, du code de
+        l'action elle-même (découplage). De plus, nous soulignons l'avantage de l'utilisation de ce patron puisqu'une telle
+        implémentation satisfait le principe OCP. Il est maintenant facile d'ajouter des nouvelles commandes sans complexifier
+        les interactions dans notre code.
+    </p><br>
+
+    <p> L'utilisation du patron de stratégie (patron additionnel) vise à simplifier le volet de paye dans notre design logiciel. En
+        effet, nous encapsulons le comportement multiple du prix d'un siège/cabine appartenant à des sections différentes (prix
+        varie selon section). Le patron stratégie nous offre un moyen d'avoir une meilleure cohésion de design (SRP).
+    </p><br>
+
+    CF. pdf dans le dossier pour le reste des infos
+
+
+
+
+
+
+
+</div>
+
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"crossorigin="anonymous"></script>
+
+</body>
+</html>
+

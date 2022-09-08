@@ -1,0 +1,1495 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Rapport</title>
+    </head>
+
+
+    <body>
+
+        <div class="container m-4">
+
+            <h1>Rapport - IFT 3911 : TP1</h1><br>
+
+            <h2>Membres de l'équipe :</h2>
+            <ul>
+                <li>Nicolas Alvarado; 3382; nicolas.alvarado@umontreal.ca; temps mis : ~9h</li>
+                <li>Nathan Grondin; 7500; nathan-ivanhoe.grondin-richard@umontreal.ca; temps mis : ~9h</li>
+                <li>Nadia Charonov; 1063; charonovnadia@gmail.com; temps mis : ~15h</li>
+            </ul><br>
+
+            <h4>Devoir complet soumis par :</h4>
+            <p>Nadia Charonov</p><br>
+
+            <h4>Distribution des tâches :</h4><br>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tâche</th>
+                        <th>Nicolas</th>
+                        <th>Nathan</th>
+                        <th>Nadia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            Tâche 1
+                        </th>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            -
+                        </td>
+                        <td>
+                            100%
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Tâche 2
+                        </th>
+                        <td>
+                            Diagramme de séquence : réserver un siège<br>
+                            Diagramme de classe : 33%
+                        </td>
+                        <td>
+                            Diagramme de séquence : payer un siège<br>
+                            Diagramme de classe : 33%<br>
+                            Diagramme de paquet
+                        </td>
+                        <td>
+                            Diagramme de séquence : vérifier les vols/lignes/itinéraire<br>
+                            Diagramme de classe : 33%
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Tâche 3
+                        </th>
+                        <td>
+                            Contraintes OCL n°1, 2, 3, 9
+                        </td>
+                        <td>
+                            Contraintes OCL n°5, 6, 7, 8, 10, 13
+                        </td>
+                        <td>
+                            Contraintes OCL n°4, 11, 12
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Tâche 4
+                        </th>
+                        <td>
+                            50%
+                        </td>
+                        <td>
+                            50%
+                        </td>
+                        <td>
+                            -
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Tâche 1</h2><br>
+
+            <h3>Cas d'utilisations :</h3><br>
+
+            <!--Inscription + identification-->
+            <div>
+                <div class="row align-items-start">
+                    <div class="col border p-3 m-2">
+                        <ul>
+                            <li><b>Cas d'utilisation : </b>Inscription</li>
+                            <li><b>But : </b>Un utilisateur peut s'inscrire en tant qu'administrateur ou client.</li>
+                            <li><b>Préconditions : </b></li>
+                            <li><b>Acteurs : </b>Utilisateur</li>
+                            <li><b>Scénario principal : </b></li>
+                            <ol>
+                                <li>L'utilisateur sélectionne "Inscription".</li>
+                                <li>Le système demande les informations d'identification.</li>
+                                <li>L'utilisateur entre les informations.</li>
+                                <li>Le système crée un profil dans la base de donnée.</li>
+                                <li>Le système affiche le volet correspondant.</li>
+                            </ol>
+                            <li><b>Scénarios alternatifs :</b>
+                                <ul>
+                                    <li>4.a. L'utilisateur existe déjà.</li>
+                                    <ol>
+                                        <li>Le système montre un message d'erreur.</li>
+                                        <li>Le système retourne à l'étape 2.</li>
+                                    </ol>
+                                </ul>
+                            </li>
+                            <li><b>Postconditions : </b> Le compte a été créé et l'utilisateur peut accéder au menu correspondant.</li>
+                        </ul>
+                    </div>
+                    <div class="col border p-3 m-2">
+                        <ul>
+                            <li><b>Cas d'utilisation : </b>Identification</li>
+                            <li><b>But : </b>Identifier si l'utilisateur est un client ou administrateur.</li>
+                            <li><b>Préconditions : </b></li>
+                            <li><b>Acteurs : </b>Utilisateur</li>
+                            <li><b>Scénario principal : </b></li>
+                            <ol>
+                                <li>L'utilisateur sélectionne "Identification".</li>
+                                <li>Le système demande les informations d'identification.</li>
+                                <li>L'utilisateur entre les informations.</li>
+                                <li>Le système reconnaît si l'utilisateur est un client ou administateur.</li>
+                                <li>Le système affiche le volet correspondant.</li>
+                            </ol>
+                            <li><b>Scénarios alternatifs :</b>
+                                <ul>
+                                    <li>4.a. L'utilisateur n'existe pas ou les informations sont erronées.</li>
+                                    <ol>
+                                        <li>Le système montre un message d'erreur.</li>
+                                        <li>Le système retourne à l'étape 2.</li>
+                                    </ol>
+                                </ul>
+                            </li>
+                            <li><b>Postconditions : </b> L'utilisateur s'est identifié et peut accéder au menu correspondant.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!--------------->
+
+            <br><h4>Volet administratif</h4><br>
+
+            <div>
+                <h5>Commun</h5><br>
+                
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Créer un aéroport, un port, ou une gare</li>
+                                <li><b>But : </b>Créer un aéroport, un port, ou une gare</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens", "Voyages navals" ou "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les aéroports", "Gérer les ports", ou "Gérer les gares".</li>
+                                    <li>L'administrateur sélectionne "Créer".</li>
+                                    <li>Le système demande l'identifiant unique à trois lettre de l'aéroport, du port ou de la gare, et la ville.</li>
+                                    <li>L'administrateur entre les informations.</li>
+                                    <li>Le système ajoute l'aéropor, le port ou la gare à la base de donnée.</li>
+                                    <li>Le système retourne au menu précédent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>5.a. L'identifiant existe déjà</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 4.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b> Un nouveau aéroport, port ou gare a été créé dans la base de donnée.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Modifier un aéroport, port ou gare</li>
+                                <li><b>But : </b>Modifier un aéroport, port ou gare</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens", "Voyages navals" ou "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les aéroports", "Gérer les ports", ou "Gérer les gares".</li>
+                                    <li>L'administrateur sélectionne "Modifier".</li>
+                                    <li>Le système affiche la liste des aéroports, ports, ou gares existants.</li>
+                                    <li>L'administrateur sélectionne l'élement à modifier.</li>
+                                    <li>Le système affiche l'identifiant et la ville.</li>
+                                    <li>L'administrateur modifie et valide.</li>
+                                    <li>Le système sauvegarde la modification et retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>7.a. L'identifiant existe déjà</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 6.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b> L'aéroport, port, ou gare a été modifié avec succés.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Suppression d'aéroport, port ou gare</li>
+                                <li><b>But : </b>Supprimer un aéroport, port, ou gare</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens", "Voyages navals" ou "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les aéroports", "Gérer les ports", ou "Gérer les gares".</li>
+                                    <li>L'administrateur sélectionne "Supprimer".</li>
+                                    <li>Le système affiche la liste des élements existants.</li>
+                                    <li>L'administrateur sélectionne l'élement à supprimer.</li>
+                                    <li>Le système vérifie s'il n'y a pas de vols, itinéraires, ou trajets existants en départ ou destination de cet aéroport, port, ou gare.</li>
+                                    <li>Le système supprime l'élement de la base de données.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>6.a. Il existe encore des vols, itinéraires, ou trajets.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 4.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b>L'aéroport, port ou gare a été supprimé avec succés.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Créer une compagnie aérienne, de croisière, ou une ligne de train</li>
+                                <li><b>But : </b>Créer une compagnie aérienne, de croisière, ou une ligne de train</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens", "Voyages navals" ou "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les compagnies aériennes", "Gérer les compagnies de croisière", ou "Gérer les lignes de train".</li>
+                                    <li>L'administrateur sélectionne "Créer".</li>
+                                    <li>Le système demande l'identifiant unique, et le nom.</li>
+                                    <li>L'administrateur entre les informations.</li>
+                                    <li>Le système ajoute la compagnie ou la ligne à la base de donnée.</li>
+                                    <li>Le système retourne au menu précédent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>5.a. L'identifiant existe déjà</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 4.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b> Une nouvelle compagnie aérienne, de croisière, ou une ligne de train a été créé dans la base de donnée.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Modifier une compagnie aérienne, de croisière, ou une ligne de train</li>
+                                <li><b>But : </b>Modifier une compagnie aérienne, de croisière, ou une ligne de train</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens", "Voyages navals" ou "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les compagnies aériennes", "Gérer les compagnies de croisière", ou "Gérer les lignes de train".</li>
+                                    <li>L'administrateur sélectionne "Modifier".</li>
+                                    <li>Le système affiche la liste des compagnies ou lignes existantes.</li>
+                                    <li>L'administrateur sélectionne l'élement à modifier.</li>
+                                    <li>Le système affiche l'identifiant et le nom que l'administrateur peut modifier.</li>
+                                    <li>L'administrateur modifie et valide.</li>
+                                    <li>Le système sauvegarde la modification et retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>7.a. L'identifiant n'est pas du bon format.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 6.</li>
+                                        </ol>
+                                        <li>7.b. L'identifiant existe déjà</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 6.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b> La compagnie aérienne, de croisière ou la ligne de train a été modifiée avec succés.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Suppression de compagnie aérienne, de croisière, ou une ligne de train</li>
+                                <li><b>But : </b>Supprimer une compagnie aérienne, de croisière, ou une ligne de train</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens", "Voyages navals" ou "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les compagnies aériennes", "Gérer les compagnies de croisière", ou "Gérer les lignes de train".</li>
+                                    <li>L'administrateur sélectionne "Supprimer".</li>
+                                    <li>Le système affiche la liste des compagnies ou lignes existantes.</li>
+                                    <li>L'administrateur sélectionne l'élement à supprimer.</li>
+                                    <li>Le système vérifie s'il n'y a pas de vols, itinéraires ou trajets existants avec cette compagnie.</li>
+                                    <li>Le système supprime la compagnie de la base de données.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>6.a. Il y a des vols, itinéraires ou trajets avec cette compagnie ou ligne.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 4.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b>La companie aérienne, de croisière, ou une ligne de train a été supprimée avec succés.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <br><h5>Voyage aérien</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Créer un vol</li>
+                                <li><b>But : </b>Créer un vol</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens".</li>
+                                    <li>L'administrateur sélectionne "Gérer les vols".</li>
+                                    <li>L'administrateur sélectionne "Créer".</li>
+                                    <li>Le système demande les informations du vol.</li>
+                                    <li>L'administrateur entre les informations.</li>
+                                    <li>Le système ajoute le vol à la base de donnée.</li>
+                                    <li>Le système retourne au menu précédent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>5.a. La compagnie aérienne, aéroport d'origine, ou aéroport de destination n'existent pas.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 4.</li>
+                                        </ol>
+                                        <li>5.b. Les aéroports sont les mêmes.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 4.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b> Un nouveau vol a été créé dans la base de donnée.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Modifier un vol</li>
+                                <li><b>But : </b>Modifier un vol</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens".</li>
+                                    <li>L'administrateur sélectionne "Gérer les vols".</li>
+                                    <li>L'administrateur sélectionne "Modifier".</li>
+                                    <li>Le système affiche la liste des vols existants.</li>
+                                    <li>L'administrateur sélectionne le vol à modifier.</li>
+                                    <li>Le système affiche les informations du vol que l'administrateur peut modifier.</li>
+                                    <li>L'administrateur modifie et valide.</li>
+                                    <li>Le système sauvegarde la modification et retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>7.a. La compagnie aérienne, aéroport d'origine, ou aéroport de destination n'existent pas.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 6.</li>
+                                        </ol>
+                                        <li>7.b. Les aéroports sont les mêmes.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 6.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b> Le vol a été modifié avec succés.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Suppression de vol</li>
+                                <li><b>But : </b>Supprimer un vol</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens".</li>
+                                    <li>L'administrateur sélectionne "Gérer les vols".</li>
+                                    <li>L'administrateur sélectionne "Supprimer".</li>
+                                    <li>Le système affiche la liste des vols existants.</li>
+                                    <li>L'administrateur sélectionne le vol à supprimer.</li>
+                                    <li>Le système supprime le vol de la base de données.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                </li>
+                                <li><b>Postconditions : </b>Le vol a été supprimé avec succés.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Création de sections d'un avion</li>
+                                <li><b>But : </b>Créer les sections pour l'avion d'un certain vol.</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens".</li>
+                                    <li>L'administrateur sélectionne "Gérer les vols".</li>
+                                    <li>L'administrateur sélectionne "Ajouter des sections".</li>
+                                    <li>Le système affiche la liste des vols qui n'ont pas encore de sections ajoutées.</li>
+                                    <li>L'administrateur sélectionne le vol souhaité.</li>
+                                    <li>Le système demande de sélectionner les sections présentes dans l'avion, ainsi que leur ordre dans l'avion.</li>
+                                    <li>L'administrateur entre les informations et confirme.</li>
+                                    <li>Le système demande la disposition des sièges dans chaque section, et le nombre de rangées par section.</li>
+                                    <li>L'adminisrateur entre les informations et confirme.</li>
+                                    <li>Le système crée les sections de l'avion de ce vol, ainsi qu'une liste de sièges associée.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <li>7.a. Il y a deux fois la même sections.</li>
+                                    <ol>
+                                        <li>Le système montre un message d'erreur.</li>
+                                        <li>Le système retourne à l'étape 6.</li>
+                                    </ol>
+                                    <li>9.a. Nombre maximal de rangées atteint.</li>
+                                    <ol>
+                                        <li>Le système montre un message d'erreur.</li>
+                                        <li>Le système retourne à l'étape 8.</li>
+                                    </ol>
+                                </li>
+                                <li><b>Postconditions : </b>Le système a créé les sièges de l'avion de ce vol ainsi que ses sections.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Assignation des prix</li>
+                                <li><b>But : </b>Assigner les prix aux sections d'un avion d'un certain vol.</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens".</li>
+                                    <li>L'administrateur sélectionne "Gérer les vols".</li>
+                                    <li>L'administrateur sélectionne "Assigner les prix".</li>
+                                    <li>Le système affiche la liste des vols disponibles qui n'ont pas de prix assigné.</li>
+                                    <li>L'administrateur sélectionne le vol souhaité.</li>
+                                    <li>Le système demande le prix.</li>
+                                    <li>L'adminisrateur entre l'information et confirme.</li>
+                                    <li>Le système met à jour les informations du vol avec le prix donné.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                </li>
+                                <li><b>Postconditions : </b>Le vol a été mis à jour avec le prix assigné.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Consultation</li>
+                                <li><b>But : </b>Consulter la liste des vols.</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages aériens".</li>
+                                    <li>L'administrateur sélectionne "Consultation".</li>
+                                    <li>L'administrateur sélectionne "Par aéroport" ou "Par compagnie aérienne".</li>
+                                    <li>Le système affiche la liste des aéroports ou des compagnies.</li>
+                                    <li>L'administrateur sélectionne l'aéroport ou la compagnie.</li>
+                                    <li>Le système recherche et affiche tout les vols de cet aéroport ou compagnie.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                </li>
+                                <li><b>Postconditions : </b>Tous les vols pour cet aéropot ou compagnie aérienne sont affichés.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <br><h5>Voyage naval</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Créer un itinéraire</li>
+                                <li><b>But : </b>Créer un itinéraire</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages navals".</li>
+                                    <li>L'administrateur sélectionne "Gérer les itinéraires".</li>
+                                    <li>L'administrateur sélectionne "Créer".</li>
+                                    <li>Le système demande les informations de l'itinéraire.</li>
+                                    <li>L'administrateur entre les informations.</li>
+                                    <li>Le système ajoute l'itinéraire à la base de donnée.</li>
+                                    <li>Le système retourne au menu précédent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>5.a. La compagnie de croisière n'existe pas.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 4.</li>
+                                        </ol>
+                                        <li>5.b. Le port de départ et d'arrivée n'est pas le même.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 4.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b> Un nouvel itinéraire a été créé dans la base de donnée.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Modifier un itinéraire</li>
+                                <li><b>But : </b>Modifier un itinéraire</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages navals".</li>
+                                    <li>L'administrateur sélectionne "Gérer les itinéraire".</li>
+                                    <li>L'administrateur sélectionne "Modifier".</li>
+                                    <li>Le système affiche la liste des itinéraires existants.</li>
+                                    <li>L'administrateur sélectionne l'itinéraire à modifier.</li>
+                                    <li>Le système affiche les informations de l'itinéraire que l'administrateur peut modifier.</li>
+                                    <li>L'administrateur modifie et valide.</li>
+                                    <li>Le système sauvegarde la modification et retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>7.a. La compagnie de croisière n'existe pas.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 6.</li>
+                                        </ol>
+                                        <li>7.b. Le port de départ et d'arrivée n'est pas le même.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 6.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b> L'itinéraire a été modifié avec succés.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Suppression d'itinéraire</li>
+                                <li><b>But : </b>Supprimer un itinéraire</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages navals".</li>
+                                    <li>L'administrateur sélectionne "Gérer les itinéraires".</li>
+                                    <li>L'administrateur sélectionne "Supprimer".</li>
+                                    <li>Le système affiche la liste des itinéraires existants.</li>
+                                    <li>L'administrateur sélectionne l'itinéraire à supprimer.</li>
+                                    <li>Le système supprime l'itinéraire de la base de données.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>5.a. Il y a encore des paquebots assignés à cet itinéraire.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 4.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b>L'itinéraire a été supprimé avec succés.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Création de paquebots</li>
+                                <li><b>But : </b>Créer un paquebot avec des sections et cabines et lui assigner les itinéraires souhaités.</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages navals".</li>
+                                    <li>L'administrateur sélectionne "Gérer les paquebots".</li>
+                                    <li>L'administrateur sélectionne "Ajouter un paquebot".</li>
+                                    <li>Le système demande le nombre de cabines dans le paquebot pour chaque section.</li>
+                                    <li>L'administrateur entre les informations et confirme.</li>
+                                    <li>Le système affiche la liste des itinéraires et demande lesquels ajouter au paquebot.</li>
+                                    <li>L'administrateur sélectionne l'ensemble des itinéraires et confirme.</li>
+                                    <li>Le système crée un paquebot avec les informations données, ainsi qu'une liste d'itinéraires et de cabines qui lui sont associés.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <li>7.a. Les itinéraires se chevauchent.</li>
+                                    <ol>
+                                        <li>Le système montre un message d'erreur.</li>
+                                        <li>Le système retourne à l'étape 6.</li>
+                                    </ol>
+                                </li>
+                                <li><b>Postconditions : </b>Le système a créé un paquebot avec des cabines et itinéraires assignés.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Assignation des prix</li>
+                                <li><b>But : </b>Assigner les prix à un paquebot d'un certain itinéraire.</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages navals".</li>
+                                    <li>L'administrateur sélectionne "Gérer les itinéraires".</li>
+                                    <li>L'administrateur sélectionne "Assigner les prix".</li>
+                                    <li>Le système affiche la liste des itinéraires disponibles qui n'ont pas de prix assigné.</li>
+                                    <li>L'administrateur sélectionne l'itinéraire souhaité.</li>
+                                    <li>Le système demande le prix.</li>
+                                    <li>L'adminisrateur entre l'information et confirme.</li>
+                                    <li>Le système met à jour les informations de l'itinéraire avec le prix donné.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                </li>
+                                <li><b>Postconditions : </b>L'itinéraire a été mis à jour avec le prix assigné.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Consultation</li>
+                                <li><b>But : </b>Consulter la liste des itinéraires.</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Consultation".</li>
+                                    <li>L'administrateur sélectionne "Par port" ou "Par compagnie de croisière".</li>
+                                    <li>Le système affiche la liste des ports ou de la compagnie.</li>
+                                    <li>L'administrateur sélectionne le port ou la compagnie.</li>
+                                    <li>Le système recherche et affiche tout les itinéraires de ce port ou compagnie.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                </li>
+                                <li><b>Postconditions : </b>Tous les itinéraires pour ce port ou compagnie de croisière sont affichés.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <br><h5>Voyage ferroviaire</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Créer un trajet</li>
+                                <li><b>But : </b>Créer un trajet</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les trajets".</li>
+                                    <li>L'administrateur sélectionne "Créer".</li>
+                                    <li>Le système demande les informations du trajet.</li>
+                                    <li>L'administrateur entre les informations.</li>
+                                    <li>Le système ajoute le trajet à la base de donnée.</li>
+                                    <li>Le système retourne au menu précédent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>5.a. La ligne de train ou les gares n'existent pas.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 4.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b> Un nouveau trajet a été créé dans la base de donnée.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Modifier un trajet</li>
+                                <li><b>But : </b>Modifier un trajet</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les trajets".</li>
+                                    <li>L'administrateur sélectionne "Modifier".</li>
+                                    <li>Le système affiche la liste des trajets existants.</li>
+                                    <li>L'administrateur sélectionne le trajet à modifier.</li>
+                                    <li>Le système affiche les informations du trajet que l'administrateur peut modifier.</li>
+                                    <li>L'administrateur modifie et valide.</li>
+                                    <li>Le système sauvegarde la modification et retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>7.a. La ligne de train ou les gares n'existent pas.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 6.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b> Le trajet a été modifié avec succés.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Suppression de trajet</li>
+                                <li><b>But : </b>Supprimer un trajet</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les trajets".</li>
+                                    <li>L'administrateur sélectionne "Supprimer".</li>
+                                    <li>Le système affiche la liste des trajets existants.</li>
+                                    <li>L'administrateur sélectionne le trajet à supprimer.</li>
+                                    <li>Le système supprime le trajet de la base de données.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                </li>
+                                <li><b>Postconditions : </b>L'itinéraire a été supprimé avec succés.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Création de sections d'un train</li>
+                                <li><b>But : </b>Créer les sections pour le train d'un certain rajet.</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les trajets".</li>
+                                    <li>L'administrateur sélectionne "Ajouter des sections".</li>
+                                    <li>Le système affiche la liste des trajets qui n'ont pas encore de sections ajoutées.</li>
+                                    <li>L'administrateur sélectionne le trajet souhaité.</li>
+                                    <li>Le système demande le nombre de rangées pour les deux sections.</li>
+                                    <li>L'administrateur entre les informations et confirme.</li>
+                                    <li>Le système crée les sections du train de cet itinéraire, ainsi qu'une liste de sièges associée.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                </li>
+                                <li><b>Postconditions : </b>Le système a créé les sièges du train de ce trajet ainsi que ses sections.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Assignation des prix</li>
+                                <li><b>But : </b>Assigner les prix à un train d'un certain trajet.</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Voyages ferroviaires".</li>
+                                    <li>L'administrateur sélectionne "Gérer les trajets".</li>
+                                    <li>L'administrateur sélectionne "Assigner les prix".</li>
+                                    <li>Le système affiche la liste des trajets disponibles qui n'ont pas de prix assigné.</li>
+                                    <li>L'administrateur sélectionne le trajet souhaité.</li>
+                                    <li>Le système demande le prix.</li>
+                                    <li>L'adminisrateur entre l'information et confirme.</li>
+                                    <li>Le système met à jour les informations du trajet avec le prix donné.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                </li>
+                                <li><b>Postconditions : </b>Le trajet a été mis à jour avec le prix assigné.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Consultation</li>
+                                <li><b>But : </b>Consulter la liste des trajets.</li>
+                                <li><b>Préconditions : </b>L'administrateur s'est identifié.</li>
+                                <li><b>Acteurs : </b>Administrateur</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>L'administrateur sélectionne "Consultation".</li>
+                                    <li>L'administrateur sélectionne "Par gare" ou "Par ligne de train".</li>
+                                    <li>Le système affiche la liste des gares ou des lignes.</li>
+                                    <li>L'administrateur sélectionne la gare ou la ligne.</li>
+                                    <li>Le système recherche et affiche tout les trajets de cette gare ou ligne.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                </li>
+                                <li><b>Postconditions : </b>Tous les trajets pour cette gare ou ligne de train sont affichés.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--------------->
+
+            <br><h4>Volet client</h4>
+
+            <div>
+                <br><h5>Voyage aérien et ferroviaire</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Vérification des vols ou trajets disponibles</li>
+                                <li><b>But : </b>Vérifier les vols ou trajets d'un aéroport ou gare d'origine</li>
+                                <li><b>Préconditions : </b>Le client s'est identifié.</li>
+                                <li><b>Acteurs : </b>Client</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>Le client sélectionne "Voyages aériens" ou "Voyages ferroviaires".</li>
+                                    <li>Le client sélectionne "Vols disponibles" ou "Trajets disponibles".</li>
+                                    <li>Le système demande la date de départ, l'aéroport ou la gare de départ et d'arrivée, ainsi que la classe.</li>
+                                    <li>Le client entre les informations et confirme.</li>
+                                    <li>Le système affiche la liste des vols ou trajets ayant des sièges libres avec leurs informations.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>5.a. Il n'y a pas de vols ou trajets avec ces paramètres.</li>
+                                        <ol>
+                                            <li>Le système montre un message qu'il n'y a pas de vols ou trajets disponibles.</li>
+                                            <li>Le système retourne à l'étape 3.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b>Le client a pu vérifier les vols ou trajets disponibles.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Réservation de siège</li>
+                                <li><b>But : </b>Réserver un siège pour un certain vol ou trajet</li>
+                                <li><b>Préconditions : </b>Le client s'est identifié.</li>
+                                <li><b>Acteurs : </b>Client</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>Le client sélectionne "Voyages aériens" ou "Voyages ferroviaires".</li>
+                                    <li>Le client sélectionne "Réserver".</li>
+                                    <li>Le système appelle "Vérification des vols ou trajets disponibles" et demande au client de sélectionner un vol ou trajet.</li>
+                                    <li>Le client sélectionne un vol ou trajet.</li>
+                                    <li>Le système demande si le client préfère un siège du côté aile ou fenêtre.</li>
+                                    <li>Le client sélectionne une option s'il souhaite et confirme.</li>
+                                    <li>Le système choisi un siège disponible et le réserve pour 24h.</li>
+                                    <li>Le système affiche un numéro de réservation.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>7.a. Il n'y a pas de siège disponible avec la préference sélectionnée.</li>
+                                        <ol>
+                                            <li>Le système montre un message qu'il n'y a pas de sièges disponibles.</li>
+                                            <li>Le système retourne à l'étape 5.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b>Le client a pu réserver un siège pour un certain vol ou trajet.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Paiement d'un siège</li>
+                                <li><b>But : </b>Un client veut payer pour un siège.</li>
+                                <li><b>Préconditions : </b>Le client s'est identifié.</li>
+                                <li><b>Acteurs : </b>Client</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>Le client sélectionne "Voyages aériens" ou "Voyages ferroviaires".</li>
+                                    <li>Le client sélectionne "Acheter".</li>
+                                    <li>Le système demande le numéro de réservation.</li>
+                                    <li>Le client entre l'informations et confirme.</li>
+                                    <li>Le système demande ses informations personnelles.</li>
+                                    <li>Le client entre l'informations et confirme.</li>
+                                    <li>Le système affiche la somme à payer.</li>
+                                    <li>Le client paye par carte de crédit.</li>
+                                    <li>Le système affiche une confirmation de paiement et confirme le siège.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>4.a. Le numéro de reservation n'existe pas ou a expiré.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 3.</li>
+                                        </ol>
+                                        <li>8.a. Le paiement ne passe pas.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 7.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b>Le client a pu acheter son siège réservé.</li>
+                            </ul>
+                        </div>
+                        <div class="col p-3 m-2">
+                        </div>
+                    </div>
+
+                </div>
+
+                <br><h5>Voyage naval</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Vérification des cabines disponibles</li>
+                                <li><b>But : </b>Vérifier les cabines disponibles d'un port d'origine</li>
+                                <li><b>Préconditions : </b>Le client s'est identifié.</li>
+                                <li><b>Acteurs : </b>Client</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>Le client sélectionne "Voyages navals".</li>
+                                    <li>Le client sélectionne "Itinéraires disponibles".</li>
+                                    <li>Le système demande la date de départ, le port de départ, ainsi que la classe.</li>
+                                    <li>Le client entre les informations et confirme.</li>
+                                    <li>Le système affiche la liste des itinéraires ayant des cabines libres avec leurs informations.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>5.a. Il n'y a pas d'itinéraires avec ces paramètres.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 3.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b>Le client a pu vérifier les itinéraires disponibles.</li>
+                            </ul>
+                        </div>
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Réservation de cabine</li>
+                                <li><b>But : </b>Réserver une cabine pour un certain itinéraire</li>
+                                <li><b>Préconditions : </b>Le client s'est identifié.</li>
+                                <li><b>Acteurs : </b>Client</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>Le client sélectionne "Voyages navals".</li>
+                                    <li>Le client sélectionne "Réserver".</li>
+                                    <li>Le système appelle "Vérification des cabines disponibles" et demande au client de sélectionner un itinéraire.</li>
+                                    <li>Le client sélectionne un itinéraire.</li>
+                                    <li>Le système choisi une cabine disponible et la réserve pour 24h.</li>
+                                    <li>Le système affiche un numéro de réservation.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                </li>
+                                <li><b>Postconditions : </b>Le client a pu réserver une cabine pour un certain itinéraire.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-start m-0">
+                        <div class="col border p-3 m-2">
+                            <ul>
+                                <li><b>Cas d'utilisation : </b>Paiement d'une cabine</li>
+                                <li><b>But : </b>Un client veut payer pour une cabine.</li>
+                                <li><b>Préconditions : </b>Le client s'est identifié.</li>
+                                <li><b>Acteurs : </b>Client</li>
+                                <li><b>Scénario principal : </b></li>
+                                <ol>
+                                    <li>Le client sélectionne "Voyages navals".</li>
+                                    <li>Le client sélectionne "Acheter".</li>
+                                    <li>Le système demande le numéro de réservation.</li>
+                                    <li>Le client entre l'informations et confirme.</li>
+                                    <li>Le système demande ses informations personnelles.</li>
+                                    <li>Le client entre l'informations et confirme.</li>
+                                    <li>Le système affiche la somme à payer.</li>
+                                    <li>Le client paye par carte de crédit.</li>
+                                    <li>Le système affiche une confirmation de paiement et confirme le siège.</li>
+                                    <li>Le système retourne au menu précedent.</li>
+                                </ol>
+                                <li><b>Scénarios alternatifs :</b>
+                                    <ul>
+                                        <li>4.a. Le numéro de reservation n'existe pas ou a expiré.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 3.</li>
+                                        </ol>
+                                        <li>8.a. Le paiement ne passe pas.</li>
+                                        <ol>
+                                            <li>Le système montre un message d'erreur.</li>
+                                            <li>Le système retourne à l'étape 7.</li>
+                                        </ol>
+                                    </ul>
+                                </li>
+                                <li><b>Postconditions : </b>Le client a pu payer pour sa cabine réservé.</li>
+                            </ul>
+                        </div>
+                        <div class="col p-3 m-2">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <br><br><h3>Diagramme de classe conceptuel :</h3><br>
+
+            <img src="domaine/classe/t1_classe.jpg" class="m-5" alt="Diagramme de classe conceptuel">
+
+
+            <br><h3>Diagrammes de séquence système (1/scénario) :</h3><br>
+
+
+            <div>
+                
+                <!--Inscription + identification-->
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Inscription</h4>
+                            <img src="domaine/seq/t1_seq1.jpg" class="border p-3 m-2" alt="Diagramme de séquence 1">
+                        </div>
+                        <div class="col">
+                            <h4>Identification</h4>
+                            <img src="domaine/seq/t1_seq2.jpg" class="border p-3 m-2" alt="Diagramme de séquence 2">
+                        </div>
+                    </div>               
+                </div>
+
+                <br><h4>Volet administratif</h4><br>
+
+                <h5>Commun</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Créer un aéroport, un port, ou une gare</h4>
+                            <img src="domaine/seq/t1_seq3.jpg" class="border p-3 m-2" alt="Diagramme de séquence 3">
+                        </div>
+                        <div class="col">
+                            <h4>Modifier un aéroport, port ou gare</h4>
+                            <img src="domaine/seq/t1_seq4.jpg" class="border p-3 m-2" alt="Diagramme de séquence 4">
+                        </div>
+                    </div><br>
+
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Suppression d'aéroport, port ou gare</h4>
+                            <img src="domaine/seq/t1_seq5.jpg" class="border p-3 m-2" alt="Diagramme de séquence 5">
+                        </div>
+                        <div class="col">
+                            <h4>Créer une compagnie aérienne, de croisière, ou une ligne de train</h4>
+                            <img src="domaine/seq/t1_seq6.jpg" class="border p-3 m-2" alt="Diagramme de séquence 6">
+                        </div>
+                    </div><br>
+                
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Modifier une compagnie aérienne, de croisière, ou une ligne de train</h4>
+                            <img src="domaine/seq/t1_seq7.jpg" class="border p-3 m-2" alt="Diagramme de séquence 7">
+                        </div>
+                        <div class="col">
+                            <h4>Suppression de compagnie aérienne, de croisière, ou une ligne de train</h4>
+                            <img src="domaine/seq/t1_seq8.jpg" class="border p-3 m-2" alt="Diagramme de séquence 8">
+                        </div>
+                    </div><br>
+                
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Assignation des prix</h4>
+                            <img src="domaine/seq/t1_seq19.jpg" class="border p-3 m-2" alt="Diagramme de séquence 19">
+                        </div>
+                        <div class="col">
+                            <h4>Consultation</h4>
+                            <img src="domaine/seq/t1_seq14.jpg" class="border p-3 m-2" alt="Diagramme de séquence 14">
+                        </div>
+                    </div><br>
+                </div>
+
+                <br><h5>Voyage aérien</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Créer un vol</h4>
+                            <img src="domaine/seq/t1_seq9.jpg" class="border p-3 m-2" alt="Diagramme de séquence 9">
+                        </div>
+                        <div class="col">
+                            <h4>Modifier un vol</h4>
+                            <img src="domaine/seq/t1_seq10.jpg" class="border p-3 m-2" alt="Diagramme de séquence 10">
+                        </div>
+                    </div><br>
+
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Suppression de vol</h4>
+                            <img src="domaine/seq/t1_seq11.jpg" class="border p-3 m-2" alt="Diagramme de séquence 11">
+                        </div>
+                        <div class="col">
+                            <h4>Création de sections d'un avion</h4>
+                            <img src="domaine/seq/t1_seq12.jpg" class="border p-3 m-2" alt="Diagramme de séquence 12">
+                        </div>
+                    </div><br>
+                </div>
+                
+                <br><h5>Voyage naval</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Créer un itinéraire</h4>
+                            <img src="domaine/seq/t1_seq15.jpg" class="border p-3 m-2" alt="Diagramme de séquence 15">
+                        </div>
+                        <div class="col">
+                            <h4>Modifier un itinéraire</h4>
+                            <img src="domaine/seq/t1_seq16.jpg" class="border p-3 m-2" alt="Diagramme de séquence 16">
+                        </div>
+                    </div><br>
+
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Suppression d'itinéraire</h4>
+                            <img src="domaine/seq/t1_seq17.jpg" class="border p-3 m-2" alt="Diagramme de séquence 17">
+                        </div>
+                        <div class="col">
+                            <h4>Création de paquebots</h4>
+                            <img src="domaine/seq/t1_seq18.jpg" class="border p-3 m-2" alt="Diagramme de séquence 18">
+                        </div>
+                    </div><br>
+                </div>
+
+                <br><h5>Voyage ferroviaire</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Créer un trajet</h4>
+                            <img src="domaine/seq/t1_seq20.jpg" class="border p-3 m-2" alt="Diagramme de séquence 20">
+                        </div>
+                        <div class="col">
+                            <h4>Modifier un trajet</h4>
+                            <img src="domaine/seq/t1_seq21.jpg" class="border p-3 m-2" alt="Diagramme de séquence 21">
+                        </div>
+                    </div><br>
+
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Suppression de trajet</h4>
+                            <img src="domaine/seq/t1_seq22.jpg" class="border p-3 m-2" alt="Diagramme de séquence 22">
+                        </div>
+                        <div class="col">
+                            <h4>Création de sections d'un train</h4>
+                            <img src="domaine/seq/t1_seq23.jpg" class="border p-3 m-2" alt="Diagramme de séquence 23">
+                        </div>
+                    </div><br>
+                </div>
+
+                <br><h4>Volet client</h4><br>
+
+                <h5>Voyage aérien et ferroviaire</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Vérification des vols ou trajets disponibles</h4>
+                            <img src="domaine/seq/t1_seq24.jpg" class="border p-3 m-2" alt="Diagramme de séquence 24">
+                        </div>
+                        <div class="col">
+                            <h4>Réservation de siège</h4>
+                            <img src="domaine/seq/t1_seq25.jpg" class="border p-3 m-2" alt="Diagramme de séquence 25">
+                        </div>
+                    </div><br>
+
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Paiement d'un siège</h4>
+                            <img src="domaine/seq/t1_seq26.jpg" class="border p-3 m-2" alt="Diagramme de séquence 26">
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div><br>
+                </div>
+
+
+
+                <br><h5>Voyage naval</h5><br>
+
+                <div style="height: 600px;" class="overflow-auto border border-secondary p-2">
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Vérification des cabines disponibles</h4>
+                            <img src="domaine/seq/t1_seq27.jpg" class="border p-3 m-2" alt="Diagramme de séquence 27">
+                        </div>
+                        <div class="col">
+                            <h4>Réservation de cabine</h4>
+                            <img src="domaine/seq/t1_seq28.jpg" class="border p-3 m-2" alt="Diagramme de séquence 28">
+                        </div>
+                    </div><br>
+
+                    <div class="row align-items-start">
+                        <div class="col">
+                            <h4>Paiement d'une cabine</h4>
+                            <img src="domaine/seq/t1_seq29.jpg" class="border p-3 m-2" alt="Diagramme de séquence 29">
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div><br>
+                </div>
+
+
+
+            </div>
+
+            <hr>
+
+            <h2>Tâche 2</h2>
+
+            <br><h3>Diagrammes de classe logiciel :</h3><br>
+
+            <div>
+                <img src="design/classe/t2_classe.jpg" class="m-5" alt="Diagramme de classe">
+            </div>
+
+            <br><h3>Diagrammes de séquence :</h3><br>
+            
+            <div>
+                <br><h4>Vérifier les vols/lignes/itinéraires :</h4><br>
+                <div>
+                    <img src="design/seq/t2_seq1.jpg" class="m-5" alt="Diagramme de séquence 1">
+                    <img src="design/seq/t2_seq2.jpg" class="m-5" alt="Diagramme de séquence 2">
+                    <img src="design/seq/t2_seq3.jpg" class="m-5" alt="Diagramme de séquence 3">
+                    <img src="design/seq/t2_seq4.jpg" class="m-5" alt="Diagramme de séquence 4">
+                </div>
+
+                <br><h4>Réserver un siège :</h4><br>
+                <div>
+                    <img src="design/seq/t2_seq5.PNG" class="m-5" alt="Diagramme de séquence 5">
+                </div>
+
+                <br><h4>Payer un siège :</h4><br>
+                <div>
+                    <img src="design/seq/pay.PNG" class="m-5" alt="Diagramme de séquence 6">
+                </div>
+            </div>
+
+            <br><h3>Diagramme de paquets :</h3><br>
+
+            <div>
+                <img src="design/package/t2_package.jpg" class="m-5" alt="Diagramme de paquet">
+            </div>
+
+            <hr>
+            <h2>Tâche 3</h2>
+
+            <br><h3>Les contraintes OCL :</h3><br>
+
+            <ol>
+                <li><b>Un aéroport est identifié par trois lettres uniques à chaque aéroport.</b></li>
+                <code><pre>
+
+context Aéroport inv:
+    self.allInstances() -> forAll(c1, c2:
+    | c1 &lt;&gt; c2 implies c1.idAéroport &lt;&gt; c2.idAéroport)
+                </pre></code>
+
+
+                <li><b>La partie alphabétique de l'ID d'un vol est unique à chaque compagnie et la partie numérique 
+                    est unique à chaque vol au sein de la même compagnie.</b></li>
+                <code><pre>
+
+context Compagnie aérienne
+inv: let 
+            2_prem_chars = self.Vol.idVol.at(0) + self.Vol.idVol.at(1)
+            last_chars  = self.Vol.idVol.excludes(2_prem_chars)
+        in
+            self.allInstances() -> forAll(c1, c2:  
+            | c1 &lt;&gt; c2 implies c1.first2chars &lt;&gt; c2.first2chars)
+            self.Vol.allInstances() -> forAll(v1, v2: Vol 
+            | v1 &lt;&gt; v2 implies v1.last_chars &lt;&gt; v2.last_chars)
+                </pre></code>
+
+
+                <li><b>L'aéroport de départ et d'arrivée d'un vol doit être différent.</b></li><br>
+                <code><pre>
+
+context Aéroport
+   inv: self.Vol.origine &lt;&gt; self.Vol.destination
+                </pre></code>
+
+
+                <li><b>Tous les sièges d'une même section ont le même prix.</b></li><br>
+                <code><pre>
+
+context Siege inv:  
+    Siege.allInstances() -> forAll(s1, s2| s1.section = s2.section implies s1.prix = s2.prix )
+                </pre></code>
+
+
+                <li><b>Un port est identifié par trois lettres uniques à chaque port.</b></li><br>
+                <code><pre>
+
+context Port inv:
+    self.allInstances() -> forAll(p1, p2:
+               | p1 &lt;&gt; p2 implies p1.idPort &lt;&gt; p2.idPort)
+    self.idPort.size() = 3
+                </pre></code>
+
+
+                <li><b>Un itinéraire ne peut pas durer plus de 21 jours.</b></li><br>
+                <code><pre>
+
+context Itineraire 
+    inv: self.dateArrive - self.dateDepart &lt; 22
+                </pre></code>
+
+
+                <li><b>Chaque itinéraire visite une suite de ports fixes. Le port de départ et d'arrivée doit être le même.</b></li><br>
+                <code><pre>
+
+context Itineraire
+    inv: self.port.first() = self.port.last()
+                </pre></code>
+
+
+                <li><b>Un paquebot peut être assigné à plusieurs itinéraires tant qu'ils ne se chevauchent pas.</b></li><br>
+                <code><pre>
+
+context Paquebot
+    inv: self.itinéraire.allInstances() -&gt; forAll(p1, p2:
+		| p1 &lt;&gt; p2 implies p1.dateDepart &gt; p2.dateArrivee or p2.dateDepart &gt; p1.dateArrivee
+                </pre></code>
+
+                
+                <li><b>Toutes les cabines d'une même section ont le même prix.</b></li><br>
+                <code><pre>
+
+context Compagnie de croisière
+   inv: self.itineraire.cabine.allInstances() 
+      -&gt; forAll(s1, s2: self.itineraire.cabine
+         | s1 &lt;&gt; s1 implies s1.prix = s2.prix)
+                </pre></code>
+                
+
+                <li><b>Une gare est identifiée par trois lettres uniques à chaque gare.</b></li><br>
+                <code><pre>
+
+context Gare inv:
+    self.allInstances() -&gt; forAll(g1, g2:
+               | g1 &lt;&gt; g2 implies g1.idGare &lt;&gt; g2.idGare)
+    context Gare
+    inv: self.idGare.size() = 3
+                </pre></code>
+
+
+                <li><b>Le client peut réserver un siège disponible dans un vol (ligne) donné.</b></li><br>
+                <code><pre>
+
+context Siege inv: self.confirmation = null and self.reservation = null
+                </pre></code>
+
+
+                <li><b>Un siège réservé devient assigné à un passager une fois payé: le siège est donc confirmé.</b></li><br>
+                
+                
+                <li><b>Le client peut réserver une cabine disponible pour un itinéraire donné.</b></li><br>
+                <code><pre>
+
+context Cabine inv: self.confirmation &lt;&gt; null and self.reservation &lt;&gt; null 
+                </pre></code>
+            
+            
+            </ol>
+
+            <hr>
+            <h2>Tâche 4</h2><br>
+
+            <div>
+                L’utilisateur commence par entrer son nom et mot de passe afin de se connecter à partir
+                du menu principal contenu dans la classe “Main”. Un message d’erreur lui est envoyé dans le
+                cas ou il y a une erreur avec ses informations ou bien que le email n’est pas associé à un
+                compte utilisateur. Dans le cas ou il s’agit d’un client, le menu client s’ouvre, sinon le menu
+                administrateur s’ouvre. Le menu client permet d’accéder au menu voyage qui donne accès aux
+                méthodes des trois différentes classes de voyage qui sont en lien avec la consultation des
+                voyages disponibles, la réservation de siège / cabine et l’achat. Dans le cas d’un utilisateur
+                admin, il a maintenant accès à toutes les méthodes disponibles dans les classes de voyage,
+                notamment la création de nouveaux voyages, compagnie ou destination. Il nous semblait
+                important de mettre les deux types de menu en un, mais avec les méthodes admin cachées ou
+                non en fonction de l’utilisateur afin d’éviter la duplication de code pour les méthodes qui sont
+                partagées par les deux types d’utilisateur.<br><br>
+
+                Dans le cas où l'utilisateur fait appel aux méthodes réserver() et acheter(), il se fait
+                renvoyer une réservation et passe au menu de confirmation qui contient la méthode payer(),
+                suite à laquelle l’utilisateur reçoit une confirmation de paiement et du siège.<br><br>
+
+                Nous avons choisi de mettre toutes les méthodes liées à un type de voyage dans la
+                classe de voyage lui étant associé afin de réduire au maximum le couplage et d’augmenter la
+                cohésion.<br><br>
+            </div>
+
+
+
+        </div>
+
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"crossorigin="anonymous"></script>
+
+    </body>
+</html>
+
